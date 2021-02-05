@@ -1,0 +1,31 @@
+{
+  "bank": {
+    "activity": [
+      {
+        "lending": {
+          "collateralType": ["SECURITY"],
+          "clientType": ["SMALL_AND_MEDIUM_ENTERPRISE"]
+        }
+      },
+      {
+        "bankAccount": "CURRENT_ACCOUNT"
+      },
+      {
+        "bankAccount": "SAVINGS_ACCOUNT"
+      }
+    ],
+    "reportingCurrency": "GBP",
+    "financials": {
+      "baseCurrency":  "EUR",
+      "balanceSheet": {
+        "liability": [
+          {
+            "currency": "EUR",
+            "value": 2000000,
+            "liabilityType": "RETAINED_EARNINGS"
+          }
+        ]
+      }
+    }
+  }
+}

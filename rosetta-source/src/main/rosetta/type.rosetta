@@ -1,0 +1,83 @@
+namespace "regulatorybodypoc"
+version "${project.version}"
+type Undertaking: <"Undertaking means a body corporate or partnership, or an unincorporated association carrying on a trade or business, with or without a view to profit, under the Companies Acts 2006;
+    https://www.legislation.gov.uk/ukpga/2006/46/contents/enacted">
+    underTakingType UnderTakingType (1..1)
+    registeredAddress RegisteredAddress (0..1)
+type RegisteredAddress: <"Registered address means the address of the registered office or, in absence of a registered office, the address of the head office">
+    address Address (1..1)
+    addressType RegisteredAddressType (1..1)
+type Address: <"Address means the country of the registered address">
+    country Country(1..1)
+type LegalEntity: <"Legal entity means the address of a company's registered office or, in absence of a registered office, the address of a company's head office">
+    [rootType]
+    bank Bank (0..1)
+    creditUnion CreditUnion (0..1)
+    friendlySociety FriendlySociety (0..1)
+    buildingSociety BuildingSociety (0..1)
+    identifer Identifier (1..*)
+    // note: not included in that list: investment firm
+    condition: LegalEntity -> bank exists or LegalEntity -> creditUnion exists or LegalEntity -> friendlySociety exists or LegalEntity -> buildingSociety exists 
+ 
+type Identifier: <"An unique string (e.g. LEI)">
+    identifer string (1..1)
+    identifierType IdentifierType (1..1)
+
+type CreditInstitution extends Undertaking: <"Credit institution means an undertaking the business of which is to take deposits or other repayable funds from the public and to grant credits for its own account;
+    https://www.eba.europa.eu/regulation-and-policy/single-rulebook/interactive-single-rulebook/2404">
+    activity CreditActivity (1..*)
+    
+type CreditActivity: <"Credit activity means the type of activity conducted by a credit institution">
+    lending LendingActivity (0..1)
+    bankAccount BankAccountActivity (0..1)
+    regulatedActivity RegulatedActivity (0..1)
+    condition: one-of
+    
+type LendingActivity: <"Lending activity means the activity of lending defined by the type of collateral or security used for such a lending activity and the type of client such a lending activity is extended to">
+    collateralType CollateralType (1..*)
+    clientType ClientType (1..*)
+    asset AssetType (1..*)
+
+type BalanceSheet: <"Balance sheet is a financial statement that reports a company's assets, liabilities and shareholders' equity at a specific point in time">
+    asset Asset (0..*)
+    liability Liability (0..*)
+
+type Financials: <"Financials is a group of financial statements that reports a company's financial performance">
+    [rootType]
+    baseCurrency Currency (1..1)
+    balanceSheet BalanceSheet (1..1)
+    incomeStatement IncomeStatement (1..1)
+    cashFlow CashFlow(0..*)
+    
+type IncomeStatement: <"Also known as the profit and loss statement or the statement of revenue and expense, the income statement primarily focuses on the companys revenues and expenses during a particular period">
+    revenue Amount (1..1)
+    costs Amount (0..*)
+
+type Bank extends CreditInstitution: <"Bank means a credit institution which is not a Credit Union, nor a Friendly Society, nor a Building Society;
+    http://www.prarulebook.co.uk/rulebook/Content/Part/211285/">
+    reportingCurrency Currency (1..1)
+    consolidation ConsolidationParameters (1..1)
+    financials Financials (1..1)
+    condition mustHaveRegisteredAddress: Bank -> registeredAddress exists
+
+type ConsolidationParameters:
+// to refine
+type CashFlow: <"A cash flow statement is a financial statement that provides aggregate data regarding all cash inflows a company receives from its ongoing operations and external investment sources">
+    inflow Amount (0..*)
+    outflow Amount (0..*)
+type CreditUnion extends CreditInstitution: <"Credit Union means a credit union as defined by the Credit Unions Act 1979 or the Credit Unions (Northern Ireland) Order 1985, which is an authorised person;
+    https://www.legislation.gov.uk/ukpga/1979/34/contents">
+type FriendlySociety extends CreditInstitution: <"Friendly society is a mutual association for the purposes of insurance, pensions, savings or cooperative bankin;
+https://www.legislation.gov.uk/ukpga/1992/40/contents">
+type BuildingSociety extends CreditInstitution: <"Building Society means a building society incorporated (or deemed to be incorporated) under the Building Societies Act 1986;
+    https://www.legislation.gov.uk/ukpga/1986/53/contents">
+type Amount: <"Amount is defined by a value in a specific currency">
+    currency Currency (1..1)
+    value number (1..1)
+type Asset extends Amount: <"Asset is the component of a company's balance sheet that reports what the company owns">
+    assetType AssetType (1..1)
+type Liability extends Amount: <"Liability is the component of a company's balance sheet that reports what the company owes">
+    liabilityType LiabilityType (1..1)
+type AuthorisedPerson: <"Authorised person means a person who is authorised for the purposes of the Financial Services and Markets Act 2000; 
+https://www.legislation.gov.uk/ukpga/2000/8/contents">
+    permission RegulatedActivity (0..*)

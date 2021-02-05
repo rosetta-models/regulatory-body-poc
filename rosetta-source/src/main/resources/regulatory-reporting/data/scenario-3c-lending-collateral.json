@@ -1,0 +1,25 @@
+{
+  "bank": {
+    "activity": [
+      {
+        "lending": {
+          "collateralType": ["SECURITY"],
+          "asset": ["MORTGAGE"]
+        }
+      }
+      ],
+    "reportingCurrency": "GBP",
+    "financials": {
+      "baseCurrency":  "EUR",
+      "balanceSheet": {
+        "liability": [
+          {
+            "currency": "EUR",
+            "value": 2000000,
+            "liabilityType": "RETAINED_EARNINGS"
+          }
+          ]
+      }
+    }
+  }
+}

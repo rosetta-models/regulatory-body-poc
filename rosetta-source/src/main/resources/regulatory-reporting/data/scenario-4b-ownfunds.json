@@ -1,0 +1,20 @@
+{
+  "bank" : {
+    "activity" : [ {
+      "bankAccount" : "CURRENT_ACCOUNT"
+    }, {
+      "bankAccount" : "SAVINGS_ACCOUNT"
+    } ],
+    "financials" : {
+      "balanceSheet" : {
+        "liability" : [ {
+          "currency" : "EUR",
+          "value" : 4999999.99,
+          "liabilityType" : "RETAINED_EARNINGS"
+        } ]
+      },
+      "baseCurrency" : "EUR"
+    },
+    "reportingCurrency" : "GBP"
+  }
+}

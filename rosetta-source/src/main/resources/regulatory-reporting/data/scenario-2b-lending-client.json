@@ -1,0 +1,25 @@
+{
+  "bank": {
+    "activity": [
+      {
+        "lending": {
+          "clientType": ["MEDIUM_ENTERPRISE"]
+        }
+      }
+    ],
+    "reportingCurrency": "GBP",
+    "financials": {
+      "baseCurrency":  "EUR",
+      "balanceSheet": {
+        "liability": [
+          {
+            "currency": "EUR",
+            "value": 2000000,
+            "liabilityType": "RETAINED_EARNINGS"
+          }
+        ]
+      }
+    }
+  }
+}
+

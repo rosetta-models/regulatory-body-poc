@@ -1,0 +1,23 @@
+{
+  "bank": {
+    "activity": [
+      {
+        "bankAccount": "SAVINGS_ACCOUNT"
+      }
+    ],
+    "reportingCurrency": "GBP",
+    "financials": {
+      "baseCurrency":  "EUR",
+      "balanceSheet": {
+        "liability": [
+          {
+            "currency": "EUR",
+            "value": 2000000,
+            "liabilityType": "RETAINED_EARNINGS"
+          }
+        ]
+      }
+    }
+  }
+}
+
