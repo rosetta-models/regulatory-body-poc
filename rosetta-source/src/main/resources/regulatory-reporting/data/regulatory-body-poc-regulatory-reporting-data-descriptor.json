@@ -2,7 +2,7 @@
   {
     "dataSetName": "RBP Test Pack 1",
     "inputType": "regulatorybodypoc.LegalEntity",
-    "applicableReports": ["regulatorybodypoc.blueprint.PrudentialRegulationAuthorityCRR_DefinitionOfCapitalReport"],
+    "applicableReports": ["regulatorybodypoc.blueprint.RegulationAuthorityCRR_DefinitionOfCapitalReport"],
     "data": [
       {
         "name": "Bank with activity of savings and current account is a small specialist bank",

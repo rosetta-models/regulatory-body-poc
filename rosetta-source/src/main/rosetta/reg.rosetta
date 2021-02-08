@@ -3,7 +3,7 @@ version "${project.version}"
 
 body Authority RegulatoryBodyPoc <"The Regulatory Body POC (RBP).>
 
-body Authority PrudentialRegulationAuthority <"The PRA Rulebook contains provisions made by the PRA that apply to PRA-authorised firms">
+body Authority RegulationAuthority <"The PRA Rulebook contains provisions made by the PRA that apply to PRA-authorised firms">
 
 body Authority FinancialConductAuthority <"The Financial Conduct Authority is the conduct regulator for nearly 60,000 financial services firms and financial markets in the UK and the prudential supervisor for 49,000 firms, setting specific standards for 19,000 firms.">
 
@@ -60,7 +60,7 @@ segment rulebook_date
 segment rule_date
 segment rule_number
 
-report PrudentialRegulationAuthority CRR DefinitionOfCapital in real-time
+report RegulationAuthority CRR DefinitionOfCapital in real-time
     when IsBank
     with fields
         SmallSpecialistBank
@@ -71,7 +71,7 @@ eligibility rule IsBank
     filter when LegalEntity -> bank exists
 
 reporting rule SmallSpecialistBank
-    [regulatoryReference PrudentialRegulationAuthority CRR DefinitionOfCapital 
+    [regulatoryReference RegulationAuthority CRR DefinitionOfCapital
         sector_name "CRR Firms"
         part_name "Definition of Capital"
         chapter_name "Application and Definitions"
@@ -118,7 +118,7 @@ reporting rule MeetActivitiesRequirement
         
 
 reporting rule MeetsBaseCapitalResourcesRequirement
-    [regulatoryReference PrudentialRegulationAuthority CRR DefinitionOfCapital 
+    [regulatoryReference RegulationAuthority CRR DefinitionOfCapital
         sector_name "CRR Firms"
         part_name "Definition of Capital"
         chapter_name "Application and Definitions"
