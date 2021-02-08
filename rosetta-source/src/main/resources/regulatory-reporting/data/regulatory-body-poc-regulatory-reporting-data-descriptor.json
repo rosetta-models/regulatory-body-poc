@@ -1,6 +1,6 @@
 [
   {
-    "dataSetName": "BoE Test Pack 1",
+    "dataSetName": "RBP Test Pack 1",
     "inputType": "regulatorybodypoc.LegalEntity",
     "applicableReports": ["regulatorybodypoc.blueprint.PrudentialRegulationAuthorityCRR_DefinitionOfCapitalReport"],
     "data": [

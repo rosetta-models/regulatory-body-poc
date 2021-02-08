@@ -1,7 +1,7 @@
 namespace "regulatorybodypoc"
 version "${project.version}"
 
-body Authority BankOfEngland <"The Bank of England (BoE) is the UK's central bank.">
+body Authority RegulatoryBodyPoc <"The Regulatory Body POC (RBP).>
 
 body Authority PrudentialRegulationAuthority <"The PRA Rulebook contains provisions made by the PRA that apply to PRA-authorised firms">
 
