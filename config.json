@@ -1,7 +1,7 @@
 {
   "id": "REGULATORY-BODY-POC",
   "name": "REGULATORY-BODY-POC",
-  "description": "Regulatory body POC",
+  "description": "Regulatory Body PoC",
   "modelPath": "rosetta-source/src/main",
   "permissions": [],
   "lowestVersion": "0.0.1",
