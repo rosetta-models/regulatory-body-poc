@@ -4,12 +4,12 @@
   "description": "Regulatory Body PoC",
   "modelPath": "rosetta-source/src/main",
   "permissions": [],
-  "lowestVersion": "0.0.7",
-  "upmostVersion": "0.0.7",
+  "lowestVersion": "0.0.8",
+  "upmostVersion": "0.0.8",
   "dependencyArtifact": {
     "groupId": "com.regnosys",
     "artifactId": "core-cdm-dependencies",
-    "version": "2.95.1"
+    "version": "2.97.5"
   },
   "modelArtifacts": [
     {
