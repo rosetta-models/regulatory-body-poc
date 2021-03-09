@@ -1,15 +1,15 @@
 {
   "id": "REGULATORY-BODY-POC",
   "name": "REGULATORY-BODY-POC",
-  "description": "Regulatory Body PoC",
+  "description": "Regulatory body POC",
   "modelPath": "rosetta-source/src/main",
   "permissions": [],
-  "lowestVersion": "0.0.8",
-  "upmostVersion": "0.0.8",
+  "lowestVersion": "0.0.1",
+  "parentReadOnly": false,
   "dependencyArtifact": {
     "groupId": "com.regnosys",
     "artifactId": "core-cdm-dependencies",
-    "version": "2.97.5"
+    "version": "2.90.3"
   },
   "modelArtifacts": [
     {
